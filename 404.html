@@ -11,7 +11,7 @@
       }
       body {
         font-family: "Open Sans", sans-serif;
-        margin: 0;
+        margin: 8px;
         padding: 0;
         background-color: #f5f5f5;
       }
@@ -50,43 +50,71 @@
       /* End Global Rules */
 
       /* Start Header */
-      header {
+      .error-page header {
         min-height: 80px;
         display: flex;
-        background-color: #ffffff;
       }
-      header .container {
+      @media (max-width: 767px) {
+        .error-page header {
+          min-height: auto;
+          display: initial;
+        }
+      }
+      .error-page header .container {
         display: flex;
         align-items: center;
         justify-content: space-between;
       }
-      .logo {
+      @media (max-width: 767px) {
+        .error-page header .container {
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
+      .error-page header .logo {
         color: #5d5d5d;
         font-style: italic;
         text-transform: uppercase;
         font-size: 20px;
       }
-      .links {
+      @media (max-width: 767px) {
+        .error-page header .logo {
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+      }
+      .error-page header .links {
         display: flex;
         align-items: center;
       }
-      .links li,
-      .links a {
+      @media (max-width: 767px) {
+        .error-page header .links {
+          text-align: center;
+          gap: 10px;
+        }
+      }
+      .error-page header .links li,
+      .error-page header .links a {
         margin-left: 30px;
         color: #5d5d5d;
         cursor: pointer;
         transition: 0.3s;
       }
-      .links a:last-child {
+      @media (max-width: 767px) {
+        .error-page header .links li,
+        .error-page header .links a {
+          margin-left: auto;
+        }
+      }
+      .error-page header .links a:last-child {
         border-radius: 20px;
         padding: 10px 20px;
         color: #fff;
         background-color: #6c63ff;
       }
-      .links li:not(:last-child):hover {
+      .error-page header .links li:not(:last-child):hover {
         color: #6c63ff;
       }
-      /* End Header */
 
       /* Start 404 Page */
       .not-found-page .container {
@@ -125,15 +153,15 @@
       /* End 404 Page */
     </style>
   </head>
-  <body>
+  <body class="error-page">
     <!-- Start 404 Page -->
     <header>
       <div class="container">
-        <a href="#" class="logo">Your <b>Website</b></a>
+        <a href="./" class="logo">Your <b>Website</b></a>
         <ul class="links">
-          <li>Home</li>
-          <li>About Us</li>
-          <a href="./contact-us.html">Contact Us</a>
+          <a href="./">Home</a>
+          <a href="./about">About Us</a>
+          <a href="./contact-us">Contact Us</a>
         </ul>
       </div>
     </header>

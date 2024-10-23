@@ -11,7 +11,7 @@
       }
       body {
         font-family: "Open Sans", sans-serif;
-        margin: 0;
+        margin: 8px;
         padding: 0;
         background-color: #f5f5f5;
       }
@@ -50,41 +50,69 @@
       /* End Global Rules */
 
       /* Start Header */
-      header {
+      .about-page header {
         min-height: 80px;
         display: flex;
-        background-color: #ffffff;
-        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
       }
-      header .container {
+      @media (max-width: 767px) {
+        .about-page header {
+          min-height: auto;
+          display: initial;
+        }
+      }
+      .about-page header .container {
         display: flex;
         align-items: center;
         justify-content: space-between;
       }
-      .logo {
+      @media (max-width: 767px) {
+        .about-page header .container {
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
+      .about-page header .logo {
         color: #5d5d5d;
         font-style: italic;
         text-transform: uppercase;
         font-size: 20px;
       }
-      .links {
+      @media (max-width: 767px) {
+        .about-page header .logo {
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+      }
+      .about-page header .links {
         display: flex;
         align-items: center;
       }
-      .links li,
-      .links a {
+      @media (max-width: 767px) {
+        .about-page header .links {
+          text-align: center;
+          gap: 10px;
+        }
+      }
+      .about-page header .links li,
+      .about-page header .links a {
         margin-left: 30px;
         color: #5d5d5d;
         cursor: pointer;
         transition: 0.3s;
       }
-      .links a:last-child {
+      @media (max-width: 767px) {
+        .about-page header .links li,
+        .about-page header .links a {
+          margin-left: auto;
+        }
+      }
+      .about-page header .links a:last-child {
         border-radius: 20px;
         padding: 10px 20px;
         color: #fff;
         background-color: #6c63ff;
       }
-      .links li:not(:last-child):hover {
+      .about-page header .links li:not(:last-child):hover {
         color: #6c63ff;
       }
       /* End Header */
@@ -136,15 +164,15 @@
       /* End About Us Page */
     </style>
   </head>
-  <body>
+  <body class="about-page" style="padding-top: 0;">
     <!-- Start About Us Page -->
     <header>
       <div class="container">
-        <a href="#" class="logo">Your <b>Website</b></a>
+        <a href="./" class="logo">Your <b>Website</b></a>
         <ul class="links">
-          <li>Home</li>
-          <li>About Us</li>
-          <a href="./contact-us.html">Contact Us</a>
+          <a href="./">Home</a>
+          <a href="./about">About Us</a>
+          <a href="./contact-us">Contact Us</a>
         </ul>
       </div>
     </header>

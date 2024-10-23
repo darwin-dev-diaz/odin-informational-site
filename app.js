@@ -1,24 +1,38 @@
-const http = require("http");
-const url = require("url");
+// const http = require("http");
+// const url = require("url");
 const fs = require("fs");
+const express = require("express");
+require("dotenv").config();
 
-http
-  .createServer((req, res) => {
-    const q = url.parse(req.url, true);
-    const filename = "." + q.pathname;
-    const errPage = fs.readFileSync("./404.html", {
-      encoding: "utf8",
-      flag: "r",
-    });
-    console.log(filename);
-    fs.readFile(filename, (err, data) => {
-      res.writeHead(200, { "Content-Type": "text/html" });
-      if (err) {
-        res.write(errPage);
-        return res.end();
-      }
-      res.write(data);
-      return res.end();
-    });
-  })
-  .listen(8080);
+function returnData(filePath) {
+  return fs.readFileSync(filePath, {
+    encoding: "utf8",
+    flag: "r",
+  });
+}
+const app = express();
+app.get("/", (req, res) => {
+  res.status(200);
+  res.write(returnData("index.html"));
+  res.end();
+});
+app.get("/about", (req, res) => {
+  res.status(200);
+  res.write(returnData("about.html"));
+  res.end();
+});
+app.get("/contact-us", (req, res) => {
+  res.status(200);
+  res.write(returnData("contact-us.html"));
+  res.end();
+});
+app.get("*", (req, res) => {
+  res.status(404);
+  res.write(returnData("404.html"));
+  res.end();
+});
+
+const PORT = Number(process.env.PORT) || 3000;
+app.listen(PORT, () => {
+  console.log("Server running on port " + PORT);
+});

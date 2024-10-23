@@ -13,7 +13,7 @@
         font-family: "Open Sans", sans-serif;
         background-color: #f4f4f9;
         color: #5d5d5d;
-        margin: 0;
+        margin: 8px;
       }
       a {
         text-decoration: none;
@@ -93,18 +93,20 @@
           gap: 10px;
         }
       }
-      .contact-page header .links li {
+      .contact-page header .links li,
+      .contact-page header .links a {
         margin-left: 30px;
         color: #5d5d5d;
         cursor: pointer;
         transition: 0.3s;
       }
       @media (max-width: 767px) {
-        .contact-page header .links li {
+        .contact-page header .links li,
+        .contact-page header .links a {
           margin-left: auto;
         }
       }
-      .contact-page header .links li:last-child {
+      .contact-page header .links a:last-child {
         border-radius: 20px;
         padding: 10px 20px;
         color: #fff;
@@ -167,11 +169,11 @@
     <div class="contact-page">
       <header>
         <div class="container">
-          <a href="#" class="logo">Your <b>Website</b></a>
+          <a href="./" class="logo">Your <b>Website</b></a>
           <ul class="links">
-            <li>Home</li>
-            <li>About Us</li>
-            <li>Contact Us</li>
+            <a href="./">Home</a>
+            <a href="./about">About Us</a>
+            <a href="./contact-us">Contact Us</a>
           </ul>
         </div>
       </header>
