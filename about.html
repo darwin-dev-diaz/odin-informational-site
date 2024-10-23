@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <style>
+      /* Start Global Rules */
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Open Sans", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+      }
+      a {
+        text-decoration: none;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      /* Small */
+      @media (min-width: 768px) {
+        .container {
+          width: 750px;
+        }
+      }
+      /* Medium */
+      @media (min-width: 992px) {
+        .container {
+          width: 970px;
+        }
+      }
+      /* Large */
+      @media (min-width: 1200px) {
+        .container {
+          width: 1170px;
+        }
+      }
+      /* End Global Rules */
+
+      /* Start Header */
+      header {
+        min-height: 80px;
+        display: flex;
+        background-color: #ffffff;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      header .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo {
+        color: #5d5d5d;
+        font-style: italic;
+        text-transform: uppercase;
+        font-size: 20px;
+      }
+      .links {
+        display: flex;
+        align-items: center;
+      }
+      .links li,
+      .links a {
+        margin-left: 30px;
+        color: #5d5d5d;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .links a:last-child {
+        border-radius: 20px;
+        padding: 10px 20px;
+        color: #fff;
+        background-color: #6c63ff;
+      }
+      .links li:not(:last-child):hover {
+        color: #6c63ff;
+      }
+      /* End Header */
+
+      /* Start About Us Page */
+      .about-page {
+        padding: 60px 0;
+        background-color: #f5f5f5;
+      }
+      .about-page .container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 40px;
+        text-align: left;
+      }
+      @media (max-width: 767px) {
+        .about-page .container {
+          flex-direction: column;
+        }
+      }
+      .about-page h1 {
+        font-size: 48px;
+        color: #6c63ff;
+        margin-bottom: 20px;
+      }
+      .about-page p {
+        color: #5d5d5d;
+        line-height: 1.8;
+        font-size: 18px;
+        margin-bottom: 40px;
+      }
+      .about-page .image img {
+        max-width: 100%;
+      }
+      .about-page .content {
+        flex: 1;
+      }
+      .about-page .content h2 {
+        font-size: 36px;
+        color: #6c63ff;
+        margin-bottom: 10px;
+      }
+      .about-page .content p {
+        font-size: 16px;
+        color: #5d5d5d;
+        line-height: 1.6;
+      }
+      /* End About Us Page */
+    </style>
+  </head>
+  <body>
+    <!-- Start About Us Page -->
+    <header>
+      <div class="container">
+        <a href="#" class="logo">Your <b>Website</b></a>
+        <ul class="links">
+          <li>Home</li>
+          <li>About Us</li>
+          <a href="./contact-us.html">Contact Us</a>
+        </ul>
+      </div>
+    </header>
+    <div class="about-page">
+      <div class="container">
+        <div class="content">
+          <h1>About Us</h1>
+          <p>
+            Welcome to <b>Your Website</b>, where we are dedicated to making a
+            difference in the lives of our customers. Our team is passionate
+            about providing the best services and solutions tailored to your
+            needs.
+          </p>
+          <h2>Our Mission</h2>
+          <p>
+            Our mission is to deliver exceptional products and services that
+            exceed your expectations. We believe in building strong
+            relationships with our clients, and our goal is to create value
+            through innovation, trust, and integrity.
+          </p>
+          <h2>Our Team</h2>
+          <p>
+            Our talented team is composed of individuals with diverse
+            backgrounds and expertise, all working together to bring you the
+            best possible experience. We pride ourselves on our commitment to
+            excellence and customer satisfaction.
+          </p>
+        </div>
+        <div class="image">
+          <img src="https://i.postimg.cc/DZf5X74M/about-us-team.png" alt="About Us Image" />
+        </div>
+      </div>
+    </div>
+    <!-- End About Us Page -->
+  </body>
+</html>

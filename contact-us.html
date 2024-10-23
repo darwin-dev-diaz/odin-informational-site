@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <style>
+      /* Start Global Rules */
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Open Sans", sans-serif;
+        background-color: #f4f4f9;
+        color: #5d5d5d;
+        margin: 0;
+      }
+      a {
+        text-decoration: none;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      /* Small */
+      @media (min-width: 768px) {
+        .container {
+          width: 750px;
+        }
+      }
+      /* Medium */
+      @media (min-width: 992px) {
+        .container {
+          width: 970px;
+        }
+      }
+      /* Large */
+      @media (min-width: 1200px) {
+        .container {
+          width: 1170px;
+        }
+      }
+      /* End Global Rules */
+
+      /* Start Contact Page */
+      .contact-page header {
+        min-height: 80px;
+        display: flex;
+      }
+      @media (max-width: 767px) {
+        .contact-page header {
+          min-height: auto;
+          display: initial;
+        }
+      }
+      .contact-page header .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      @media (max-width: 767px) {
+        .contact-page header .container {
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
+      .contact-page header .logo {
+        color: #5d5d5d;
+        font-style: italic;
+        text-transform: uppercase;
+        font-size: 20px;
+      }
+      @media (max-width: 767px) {
+        .contact-page header .logo {
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+      }
+      .contact-page header .links {
+        display: flex;
+        align-items: center;
+      }
+      @media (max-width: 767px) {
+        .contact-page header .links {
+          text-align: center;
+          gap: 10px;
+        }
+      }
+      .contact-page header .links li {
+        margin-left: 30px;
+        color: #5d5d5d;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      @media (max-width: 767px) {
+        .contact-page header .links li {
+          margin-left: auto;
+        }
+      }
+      .contact-page header .links li:last-child {
+        border-radius: 20px;
+        padding: 10px 20px;
+        color: #fff;
+        background-color: #6c63ff;
+      }
+      .contact-page header .links li:not(:last-child):hover {
+        color: #6c63ff;
+      }
+
+      .contact-page .content {
+        padding: 50px 0;
+        text-align: center;
+      }
+      .contact-page .content h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        color: #333;
+      }
+      .contact-page .content p {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 40px;
+      }
+      .contact-page .form-container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 30px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+      }
+      .contact-page form input,
+      .contact-page form textarea {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+        outline: none;
+      }
+      .contact-page form button {
+        padding: 15px 30px;
+        background-color: #6c63ff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .contact-page form button:hover {
+        background-color: #5951d1;
+      }
+      /* End Contact Page */
+    </style>
+  </head>
+  <body>
+    <!-- Start Contact Page -->
+    <div class="contact-page">
+      <header>
+        <div class="container">
+          <a href="#" class="logo">Your <b>Website</b></a>
+          <ul class="links">
+            <li>Home</li>
+            <li>About Us</li>
+            <li>Contact Us</li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="content">
+        <h1>Get in Touch</h1>
+        <p>
+          Have any questions or inquiries? We'd love to hear from you. Fill out
+          the form below and we’ll get back to you as soon as possible.
+        </p>
+
+        <div class="form-container">
+          <form action="#" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Your Message"
+              required
+            ></textarea>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- End Contact Page -->
+  </body>
+</html>
