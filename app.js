@@ -13,22 +13,31 @@ function returnData(filePath) {
 const app = express();
 app.get("/", (req, res) => {
   res.status(200);
-  res.write(returnData("index.html"));
+  res.send(returnData("index.html"));
   res.end();
 });
 app.get("/about", (req, res) => {
   res.status(200);
-  res.write(returnData("about.html"));
+  res.send(returnData("about.html"));
   res.end();
 });
 app.get("/contact-us", (req, res) => {
   res.status(200);
-  res.write(returnData("contact-us.html"));
+  res.send(returnData("contact-us.html"));
+  res.end();
+});
+app.get("/:username/messages", (req, res) => {
+  console.log(req.params);
+  res.end();
+});
+app.get("/:username/messages/:messageId", (req, res) => {
+  console.log("Params", req.params);
+  console.log("Query", req.query);
   res.end();
 });
 app.get("*", (req, res) => {
   res.status(404);
-  res.write(returnData("404.html"));
+  res.send(returnData("404.html"));
   res.end();
 });
 
